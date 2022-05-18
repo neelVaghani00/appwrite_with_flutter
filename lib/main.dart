@@ -1,5 +1,8 @@
 import 'package:appwrite/appwrite.dart';
+import 'package:appwrite_with_flutter/features/auth/presentation/pages/login.dart';
 import 'package:flutter/material.dart';
+
+import 'general/presentation/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,74 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  late Client client;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  void initState() {
-//     super.initState();
-//     client = Client();
-//     client.setEndPointRealtime("http://localhost/console/home?project=627c74dce00e6bc4a3fd").setProject("627c74dce00e6bc4a3fd");
-
-//     Account account = Account(client);
-//     account.create(email: "neel.vaghani@joflee.com",password: 'password').then((response) {
-//       print(response);
-
-//     }).catchError(onError) {
-// print(onError)
-//     };
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.red,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        home: LoginPage());
   }
 }
